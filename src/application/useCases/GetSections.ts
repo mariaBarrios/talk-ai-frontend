@@ -4,7 +4,11 @@ import type { QuizQuestion } from '../../domain/models/QuizQuestion';
 import type { SectionRepository } from '../../domain/ports/SectionRepository';
 
 export class GetSections {
-  constructor(private readonly repository: SectionRepository) {}
+  private readonly repository: SectionRepository;
+
+  constructor(repository: SectionRepository) {
+    this.repository = repository;
+  }
 
   all(): Section[] {
     return this.repository.getSections();

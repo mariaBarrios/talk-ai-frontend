@@ -1,7 +1,11 @@
 import type { ProgressTracker } from '../../domain/ports/ProgressTracker';
 
 export class TrackScrollProgress {
-  constructor(private readonly tracker: ProgressTracker) {}
+  private readonly tracker: ProgressTracker;
+
+  constructor(tracker: ProgressTracker) {
+    this.tracker = tracker;
+  }
 
   setLevel(level: number): void {
     this.tracker.setCurrentLevel(level);

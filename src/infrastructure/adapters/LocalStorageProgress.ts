@@ -4,8 +4,10 @@ const STORAGE_KEY = 'talk-ai-progress';
 
 export class LocalStorageProgress implements ProgressTracker {
   private currentLevel = 0;
+  private readonly totalLevels: number;
 
-  constructor(private readonly totalLevels: number) {
+  constructor(totalLevels: number) {
+    this.totalLevels = totalLevels;
     const saved = localStorage.getItem(STORAGE_KEY);
     if (saved) {
       this.currentLevel = Number(saved);
