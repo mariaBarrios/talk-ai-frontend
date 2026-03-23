@@ -1,5 +1,7 @@
 import { motion } from 'framer-motion';
 import type { TimelineEvent } from '../../../domain/models/TimelineEvent';
+import type { SpriteName } from '../PixelSprite/PixelSprite';
+import { PixelSprite } from '../PixelSprite/PixelSprite';
 import { PixelText } from '../PixelText/PixelText';
 import styles from './Timeline.module.css';
 
@@ -14,11 +16,11 @@ const SPRITE_COLORS: Record<string, string> = {
   'ai-enhanced': 'var(--color-neon-magenta)',
 };
 
-const SPRITE_EMOJIS: Record<string, string> = {
-  rookie: '🗡️',
-  frontend: '🛡️',
-  fullstack: '⚔️',
-  'ai-enhanced': '🚀',
+const SPRITE_NAMES: Record<string, SpriteName> = {
+  rookie: 'sword',
+  frontend: 'shield',
+  fullstack: 'dual-swords',
+  'ai-enhanced': 'rocket',
 };
 
 export const Timeline: React.FC<Props> = ({ events }) => (
@@ -37,7 +39,7 @@ export const Timeline: React.FC<Props> = ({ events }) => (
           className={styles.dot}
           style={{ borderColor: SPRITE_COLORS[event.spriteVariant], boxShadow: `0 0 12px ${SPRITE_COLORS[event.spriteVariant]}` }}
         >
-          <span className={styles.sprite}>{SPRITE_EMOJIS[event.spriteVariant]}</span>
+          <PixelSprite name={SPRITE_NAMES[event.spriteVariant]} size={24} color={SPRITE_COLORS[event.spriteVariant]} />
         </div>
         <div className={styles.card}>
           <PixelText as="span" size="sm" color="var(--color-neon-yellow)">

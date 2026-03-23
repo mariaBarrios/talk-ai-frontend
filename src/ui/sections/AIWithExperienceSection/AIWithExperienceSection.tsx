@@ -1,23 +1,24 @@
 import { motion } from 'framer-motion';
 import { AnimatedSection } from '../../components/AnimatedSection/AnimatedSection';
 import { LevelBanner } from '../../components/LevelBanner/LevelBanner';
+import { PixelSprite } from '../../components/PixelSprite/PixelSprite';
 import { PixelText } from '../../components/PixelText/PixelText';
 import styles from './AIWithExperienceSection.module.css';
 
 const SHINES = [
-  { icon: '✅', text: 'Boilerplate y código repetitivo' },
-  { icon: '✅', text: 'Refactors mecánicos' },
-  { icon: '✅', text: 'Exploración de APIs desconocidas' },
-  { icon: '✅', text: 'Prototipado rápido' },
-  { icon: '✅', text: 'Generación de tests básicos' },
+  { text: 'Boilerplate y código repetitivo' },
+  { text: 'Refactors mecánicos' },
+  { text: 'Exploración de APIs desconocidas' },
+  { text: 'Prototipado rápido' },
+  { text: 'Generación de tests básicos' },
 ];
 
 const FAILS = [
-  { icon: '❌', text: 'Decisiones de arquitectura' },
-  { icon: '❌', text: 'Edge cases y race conditions' },
-  { icon: '❌', text: 'Contexto de negocio específico' },
-  { icon: '❌', text: 'Rendimiento y optimización' },
-  { icon: '❌', text: 'Seguridad (XSS, CSRF, inyecciones)' },
+  { text: 'Decisiones de arquitectura' },
+  { text: 'Edge cases y race conditions' },
+  { text: 'Contexto de negocio específico' },
+  { text: 'Rendimiento y optimización' },
+  { text: 'Seguridad (XSS, CSRF, inyecciones)' },
 ];
 
 export const AIWithExperienceSection: React.FC = () => (
@@ -48,7 +49,7 @@ export const AIWithExperienceSection: React.FC = () => (
               viewport={{ once: true }}
               transition={{ delay: i * 0.1 }}
             >
-              <span>{item.icon}</span> {item.text}
+              <PixelSprite name="check" size={20} color="var(--color-neon-green)" /> {item.text}
             </motion.li>
           ))}
         </ul>
@@ -68,7 +69,7 @@ export const AIWithExperienceSection: React.FC = () => (
               viewport={{ once: true }}
               transition={{ delay: i * 0.1 }}
             >
-              <span>{item.icon}</span> {item.text}
+              <PixelSprite name="cross" size={20} color="var(--color-neon-red)" /> {item.text}
             </motion.li>
           ))}
         </ul>
