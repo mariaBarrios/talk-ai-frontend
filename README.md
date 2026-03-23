@@ -36,3 +36,15 @@ src/
 npm run build
 npm run preview
 ```
+
+## Deployment
+
+El sitio se despliega automáticamente a **GitHub Pages** cada vez que se hace push a la rama `main`.
+
+### Configuración inicial
+
+1. Ve a **Settings → Pages** en el repositorio de GitHub.
+2. En **Source**, selecciona **GitHub Actions**.
+3. Haz push a `main` y el workflow se ejecutará automáticamente.
+
+La URL del sitio será: `https://<username>.github.io/talk-ai-frontend/`
