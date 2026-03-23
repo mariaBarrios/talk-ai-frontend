@@ -1,0 +1,18 @@
+.container {
+  font-family: var(--font-mono);
+  font-size: 1rem;
+  line-height: 1.7;
+}
+
+.text {
+  color: var(--color-neon-green);
+}
+
+.cursor {
+  animation: blink 0.7s step-end infinite;
+  color: var(--color-neon-green);
+}
+
+@keyframes blink {
+  50% { opacity: 0; }
+}

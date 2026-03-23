@@ -1,0 +1,24 @@
+.quote {
+  padding: var(--space-lg);
+  border-left: 3px solid var(--color-neon-green);
+  font-family: var(--font-body);
+  font-size: 1.1rem;
+  font-style: italic;
+  color: var(--color-neon-green);
+  max-width: 700px;
+  margin: 0 auto var(--space-xl);
+  line-height: 1.7;
+  background: rgba(0, 255, 65, 0.03);
+  border-radius: 0 8px 8px 0;
+}
+
+.quizSection {
+  margin-top: var(--space-xl);
+  text-align: center;
+}
+
+.quizIntro {
+  font-size: 1rem;
+  color: var(--color-text-dim);
+  margin: var(--space-md) 0 var(--space-lg);
+}

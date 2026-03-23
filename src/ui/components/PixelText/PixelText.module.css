@@ -1,0 +1,23 @@
+.pixel {
+  font-family: var(--font-pixel);
+  line-height: 1.6;
+  letter-spacing: 1px;
+}
+
+.xs { font-size: 0.55rem; }
+.sm { font-size: 0.7rem; }
+.md { font-size: 0.9rem; }
+.lg { font-size: 1.3rem; }
+.xl { font-size: 2rem; }
+
+.glow {
+  text-shadow: 0 0 10px currentColor, 0 0 20px currentColor;
+}
+
+@media (min-width: 768px) {
+  .xs { font-size: 0.65rem; }
+  .sm { font-size: 0.85rem; }
+  .md { font-size: 1.1rem; }
+  .lg { font-size: 1.8rem; }
+  .xl { font-size: 2.8rem; }
+}

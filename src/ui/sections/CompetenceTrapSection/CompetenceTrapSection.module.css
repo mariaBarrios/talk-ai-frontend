@@ -1,0 +1,60 @@
+.quote {
+  padding: var(--space-lg);
+  border-left: 3px solid var(--color-neon-yellow);
+  font-family: var(--font-body);
+  font-size: 1.2rem;
+  font-style: italic;
+  color: var(--color-neon-yellow);
+  max-width: 700px;
+  margin: 0 auto var(--space-xl);
+  line-height: 1.7;
+  background: rgba(255, 230, 0, 0.03);
+  border-radius: 0 8px 8px 0;
+}
+
+.codeSection {
+  margin-bottom: var(--space-xl);
+}
+
+.problems {
+  max-width: 700px;
+  margin: 0 auto var(--space-xl);
+  padding: var(--space-lg);
+  background: var(--color-bg-card);
+  border-radius: 8px;
+  border: 1px solid rgba(255, 230, 0, 0.15);
+}
+
+.list {
+  list-style: none;
+  margin-top: var(--space-md);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+  font-family: var(--font-mono);
+  font-size: 0.9rem;
+  color: var(--color-text);
+}
+
+.x {
+  color: var(--color-neon-red);
+  margin-right: var(--space-sm);
+  font-weight: bold;
+}
+
+.dunning {
+  text-align: center;
+  padding: var(--space-xl) var(--space-lg);
+  border: 1px solid rgba(255, 0, 170, 0.2);
+  border-radius: 8px;
+  max-width: 600px;
+  margin: 0 auto;
+  background: rgba(255, 0, 170, 0.03);
+}
+
+.text {
+  font-size: 1rem;
+  line-height: 1.7;
+  color: var(--color-text-dim);
+  margin-top: var(--space-md);
+}

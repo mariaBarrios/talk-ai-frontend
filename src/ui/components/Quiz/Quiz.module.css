@@ -1,0 +1,111 @@
+.container {
+  background: var(--color-bg-card);
+  border: 1px solid var(--color-neon-magenta);
+  border-radius: 8px;
+  padding: var(--space-lg);
+  box-shadow: 0 0 20px rgba(255, 0, 170, 0.1);
+  max-width: 700px;
+  margin: var(--space-lg) auto;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: var(--space-lg);
+  padding-bottom: var(--space-sm);
+  border-bottom: 1px solid rgba(255, 0, 170, 0.2);
+}
+
+.questionText {
+  font-family: var(--font-mono);
+  font-size: 1rem;
+  line-height: 1.7;
+  color: var(--color-text);
+  margin-bottom: var(--space-lg);
+  white-space: pre-line;
+}
+
+.options {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+}
+
+.option {
+  display: flex;
+  align-items: center;
+  gap: var(--space-md);
+  padding: var(--space-sm) var(--space-md);
+  background: rgba(255, 0, 170, 0.05);
+  border: 1px solid rgba(255, 0, 170, 0.2);
+  border-radius: 6px;
+  color: var(--color-text);
+  font-family: var(--font-mono);
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: all 0.2s;
+  text-align: left;
+}
+
+.option:hover:not(:disabled) {
+  border-color: var(--color-neon-magenta);
+  background: rgba(255, 0, 170, 0.1);
+  box-shadow: 0 0 10px rgba(255, 0, 170, 0.2);
+}
+
+.option:disabled {
+  cursor: default;
+}
+
+.optionId {
+  font-family: var(--font-pixel);
+  font-size: 0.55rem;
+  color: var(--color-neon-magenta);
+  min-width: 1.5em;
+}
+
+.correct {
+  border-color: var(--color-neon-green) !important;
+  background: rgba(0, 255, 65, 0.1) !important;
+  box-shadow: 0 0 10px rgba(0, 255, 65, 0.2);
+}
+
+.wrong {
+  border-color: var(--color-neon-red) !important;
+  background: rgba(255, 51, 51, 0.1) !important;
+  box-shadow: 0 0 10px rgba(255, 51, 51, 0.2);
+}
+
+.feedback {
+  margin-top: var(--space-lg);
+  padding-top: var(--space-md);
+  border-top: 1px solid rgba(255, 0, 170, 0.2);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+}
+
+.explanation {
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  color: var(--color-text-dim);
+  line-height: 1.6;
+}
+
+.nextBtn {
+  align-self: flex-end;
+  font-family: var(--font-pixel);
+  font-size: 0.55rem;
+  padding: var(--space-sm) var(--space-md);
+  background: transparent;
+  border: 1px solid var(--color-neon-cyan);
+  color: var(--color-neon-cyan);
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.nextBtn:hover {
+  background: rgba(0, 240, 255, 0.1);
+  box-shadow: 0 0 10px rgba(0, 240, 255, 0.3);
+}

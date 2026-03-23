@@ -1,0 +1,73 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Inter:wght@400;600;700&family=Fira+Code:wght@400;600&display=swap');
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --color-bg: #0a0a0f;
+  --color-bg-light: #12121a;
+  --color-bg-card: rgba(18, 18, 26, 0.85);
+  --color-text: #e0e0e0;
+  --color-text-dim: #888899;
+  --color-neon-green: #00ff41;
+  --color-neon-cyan: #00f0ff;
+  --color-neon-magenta: #ff00aa;
+  --color-neon-yellow: #ffe600;
+  --color-neon-red: #ff3333;
+  --color-xp-bg: #1a1a2e;
+  --color-code-bg: rgba(0, 240, 255, 0.05);
+  --color-code-border: #00f0ff;
+
+  --font-pixel: 'Press Start 2P', monospace;
+  --font-mono: 'Fira Code', 'Consolas', monospace;
+  --font-body: 'Inter', 'Segoe UI', sans-serif;
+
+  --space-xs: 0.25rem;
+  --space-sm: 0.5rem;
+  --space-md: 1rem;
+  --space-lg: 2rem;
+  --space-xl: 4rem;
+  --space-xxl: 8rem;
+}
+
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-body);
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  line-height: 1.7;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+::selection {
+  background: var(--color-neon-magenta);
+  color: #000;
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-bg);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-neon-cyan);
+  border-radius: 3px;
+}
+
+img {
+  image-rendering: pixelated;
+}

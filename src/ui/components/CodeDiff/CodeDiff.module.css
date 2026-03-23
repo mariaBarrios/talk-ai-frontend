@@ -1,0 +1,17 @@
+.diff {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+  margin: var(--space-lg) 0;
+}
+
+.side {
+  flex: 1;
+  min-width: 0;
+}
+
+@media (min-width: 1024px) {
+  .diff {
+    flex-direction: row;
+  }
+}
