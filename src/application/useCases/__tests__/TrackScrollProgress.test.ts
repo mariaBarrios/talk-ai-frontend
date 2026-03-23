@@ -1,32 +1,29 @@
-import { describe, it, expect, vi } from 'vitest';
-import type { ProgressTracker } from '../../../domain/ports/ProgressTracker';
+import { describe, it, expect } from 'vitest';
 import { TrackScrollProgress } from '../TrackScrollProgress';
+import { aMockProgressTracker } from '../../../__tests__/builders';
 
 describe('TrackScrollProgress', () => {
-  it('delegates setLevel to tracker.setCurrentLevel', () => {
-    const tracker: ProgressTracker = {
-      getCurrentLevel: vi.fn(),
-      getTotalLevels: vi.fn(),
-      getProgressPercentage: vi.fn(),
-      setCurrentLevel: vi.fn(),
-    };
+  it('forwards the level to the tracker', () => {
+    const tracker = aMockProgressTracker();
     const useCase = new TrackScrollProgress(tracker);
-    useCase.setLevel(3);
-    expect(tracker.setCurrentLevel).toHaveBeenCalledWith(3);
+
+    useCase.setLevel(5);
+
+    expect(tracker.setCurrentLevel).toHaveBeenCalledWith(5);
   });
 
-  it('getProgress returns current, total, and percentage from tracker', () => {
-    const tracker: ProgressTracker = {
-      getCurrentLevel: vi.fn(() => 2),
-      getTotalLevels: vi.fn(() => 10),
-      getProgressPercentage: vi.fn(() => 20),
-      setCurrentLevel: vi.fn(),
-    };
+  it('aggregates progress from the tracker into a single object', () => {
+    const tracker = aMockProgressTracker({
+      currentLevel: 3,
+      totalLevels: 8,
+      percentage: 38,
+    });
     const useCase = new TrackScrollProgress(tracker);
+
     expect(useCase.getProgress()).toEqual({
-      current: 2,
-      total: 10,
-      percentage: 20,
+      current: 3,
+      total: 8,
+      percentage: 38,
     });
   });
 });

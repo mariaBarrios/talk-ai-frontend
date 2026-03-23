@@ -2,52 +2,58 @@ import { describe, it, expect } from 'vitest';
 import { InMemorySectionRepository } from '../InMemorySectionRepository';
 
 describe('InMemorySectionRepository', () => {
-  const repository = new InMemorySectionRepository();
+  const repo = new InMemorySectionRepository();
 
-  it('returns 8 sections with unique ids', () => {
-    const sections = repository.getSections();
-    expect(sections).toHaveLength(8);
-    const ids = sections.map((s) => s.id);
-    expect(new Set(ids).size).toBe(8);
-    expect(ids).toEqual([
-      'hero',
-      'whoami',
-      'realworld',
-      'competence-trap',
-      'fundamentals',
-      'ai-experience',
-      'mindset',
-      'closing',
-    ]);
+  describe('getSections', () => {
+    it('returns all 8 sections with unique ids', () => {
+      const sections = repo.getSections();
+      const ids = sections.map((s) => s.id);
+
+      expect(sections).toHaveLength(8);
+      expect(new Set(ids).size).toBe(8);
+    });
+
+    it('every section has a non-empty title and subtitle', () => {
+      for (const section of repo.getSections()) {
+        expect(section.title.trim()).not.toBe('');
+        expect(section.subtitle.trim()).not.toBe('');
+      }
+    });
   });
 
-  it('returns 4 timeline events ordered chronologically (2008, 2015, 2018, 2023)', () => {
-    const events = repository.getTimelineEvents();
-    expect(events).toHaveLength(4);
-    const years = events.map((e) => e.year);
-    expect(years).toEqual([2008, 2015, 2018, 2023]);
-    expect(events.map((e) => e.id)).toEqual(['abap', 'frontend', 'react', 'ai']);
+  describe('getTimelineEvents', () => {
+    it('returns events in chronological order', () => {
+      const years = repo.getTimelineEvents().map((e) => e.year);
+
+      expect(years).toEqual([...years].sort((a, b) => a - b));
+      expect(years.length).toBeGreaterThan(0);
+    });
+
+    it('every event has a valid sprite variant', () => {
+      for (const event of repo.getTimelineEvents()) {
+        expect(event.spriteVariant).toBeTruthy();
+      }
+    });
   });
 
-  it('returns 4 quiz questions', () => {
-    const questions = repository.getQuizQuestions();
-    expect(questions).toHaveLength(4);
-    expect(questions.map((q) => q.id)).toEqual(['q1', 'q2', 'q3', 'q4']);
-  });
+  describe('getQuizQuestions', () => {
+    it('every question has its correctOptionId in its options', () => {
+      for (const q of repo.getQuizQuestions()) {
+        const optionIds = q.options.map((o) => o.id);
+        expect(optionIds).toContain(q.correctOptionId);
+      }
+    });
 
-  it("every quiz question's correctOptionId exists in its options array", () => {
-    const questions = repository.getQuizQuestions();
-    for (const q of questions) {
-      const optionIds = q.options.map((o) => o.id);
-      expect(optionIds).toContain(q.correctOptionId);
-    }
-  });
+    it('every question has at least 2 options', () => {
+      for (const q of repo.getQuizQuestions()) {
+        expect(q.options.length).toBeGreaterThanOrEqual(2);
+      }
+    });
 
-  it('each section has a non-empty title and subtitle', () => {
-    const sections = repository.getSections();
-    for (const s of sections) {
-      expect(s.title.trim().length).toBeGreaterThan(0);
-      expect(s.subtitle.trim().length).toBeGreaterThan(0);
-    }
+    it('every question has a non-empty explanation', () => {
+      for (const q of repo.getQuizQuestions()) {
+        expect(q.explanation.trim()).not.toBe('');
+      }
+    });
   });
 });

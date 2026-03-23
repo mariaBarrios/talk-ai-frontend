@@ -1,44 +1,29 @@
-import { describe, it, expect, vi } from 'vitest';
-import type { Section } from '../../../domain/models/Section';
-import type { TimelineEvent } from '../../../domain/models/TimelineEvent';
-import type { QuizQuestion } from '../../../domain/models/QuizQuestion';
-import type { SectionRepository } from '../../../domain/ports/SectionRepository';
+import { describe, it, expect } from 'vitest';
 import { GetSections } from '../GetSections';
+import { aMockSectionRepository, aSection, aTimelineEvent, aQuizQuestion } from '../../../__tests__/builders';
 
 describe('GetSections', () => {
-  it('delegates all() to repository.getSections', () => {
-    const sections: Section[] = [];
-    const repository: SectionRepository = {
-      getSections: vi.fn(() => sections),
-      getTimelineEvents: vi.fn(() => []),
-      getQuizQuestions: vi.fn(() => []),
-    };
-    const useCase = new GetSections(repository);
-    expect(useCase.all()).toBe(sections);
-    expect(repository.getSections).toHaveBeenCalledTimes(1);
+  it('returns sections from the repository', () => {
+    const sections = [aSection({ id: 'hero' }), aSection({ id: 'closing' })];
+    const repo = aMockSectionRepository({ sections });
+    const useCase = new GetSections(repo);
+
+    expect(useCase.all()).toEqual(sections);
   });
 
-  it('delegates timeline() to repository.getTimelineEvents', () => {
-    const events: TimelineEvent[] = [];
-    const repository: SectionRepository = {
-      getSections: vi.fn(() => []),
-      getTimelineEvents: vi.fn(() => events),
-      getQuizQuestions: vi.fn(() => []),
-    };
-    const useCase = new GetSections(repository);
-    expect(useCase.timeline()).toBe(events);
-    expect(repository.getTimelineEvents).toHaveBeenCalledTimes(1);
+  it('returns timeline events from the repository', () => {
+    const events = [aTimelineEvent({ id: 'abap', year: 2008 })];
+    const repo = aMockSectionRepository({ events });
+    const useCase = new GetSections(repo);
+
+    expect(useCase.timeline()).toEqual(events);
   });
 
-  it('delegates quiz() to repository.getQuizQuestions', () => {
-    const questions: QuizQuestion[] = [];
-    const repository: SectionRepository = {
-      getSections: vi.fn(() => []),
-      getTimelineEvents: vi.fn(() => []),
-      getQuizQuestions: vi.fn(() => questions),
-    };
-    const useCase = new GetSections(repository);
-    expect(useCase.quiz()).toBe(questions);
-    expect(repository.getQuizQuestions).toHaveBeenCalledTimes(1);
+  it('returns quiz questions from the repository', () => {
+    const questions = [aQuizQuestion({ id: 'q1' }), aQuizQuestion({ id: 'q2' })];
+    const repo = aMockSectionRepository({ questions });
+    const useCase = new GetSections(repo);
+
+    expect(useCase.quiz()).toEqual(questions);
   });
 });
