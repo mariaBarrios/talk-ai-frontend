@@ -21,3 +21,13 @@
   max-width: 500px;
   margin-top: var(--space-xs);
 }
+
+@media (min-width: 1280px) {
+  .line {
+    width: 300px;
+  }
+
+  .subtitle {
+    font-size: 1.2rem;
+  }
+}

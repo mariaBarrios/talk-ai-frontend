@@ -46,3 +46,22 @@
     grid-template-columns: repeat(3, 1fr);
   }
 }
+
+@media (min-width: 1280px) {
+  .icon {
+    width: 68px;
+    height: 68px;
+    font-size: 1.8rem;
+  }
+
+  .desc {
+    font-size: 0.9rem;
+  }
+}
+
+@media (min-width: 1920px) {
+  .tree {
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--space-xl);
+  }
+}

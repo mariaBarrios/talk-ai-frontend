@@ -33,6 +33,7 @@ export const spacing = {
 export const breakpoints = {
   tablet: '768px',
   desktop: '1024px',
+  projector: '1280px',
   wide: '1440px',
 } as const;
 

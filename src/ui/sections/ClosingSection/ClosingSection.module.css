@@ -74,3 +74,25 @@
   background-size: 60px 60px;
   pointer-events: none;
 }
+
+.closing {
+  scroll-snap-align: start;
+}
+
+@media (min-width: 1280px) {
+  .content {
+    max-width: 1000px;
+  }
+
+  .subtitle {
+    font-size: 1.4rem;
+  }
+
+  .quote {
+    font-size: 1.3rem;
+  }
+
+  .ctaText {
+    font-size: 1.1rem;
+  }
+}

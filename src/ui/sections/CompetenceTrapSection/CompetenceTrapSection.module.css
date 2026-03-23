@@ -58,3 +58,17 @@
   color: var(--color-text-dim);
   margin-top: var(--space-md);
 }
+
+@media (min-width: 1280px) {
+  .quote {
+    font-size: 1.35rem;
+  }
+
+  .list {
+    font-size: 1rem;
+  }
+
+  .problems {
+    max-width: 900px;
+  }
+}

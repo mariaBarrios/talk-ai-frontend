@@ -22,3 +22,13 @@
   color: var(--color-text-dim);
   margin: var(--space-md) 0 var(--space-lg);
 }
+
+@media (min-width: 1280px) {
+  .quote {
+    font-size: 1.2rem;
+  }
+
+  .quizIntro {
+    font-size: 1.1rem;
+  }
+}

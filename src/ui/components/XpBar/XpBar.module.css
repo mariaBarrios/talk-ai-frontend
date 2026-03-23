@@ -45,3 +45,21 @@
   min-width: 3rem;
   text-align: right;
 }
+
+@media (min-width: 1280px) {
+  .container {
+    padding: var(--space-sm) var(--space-lg);
+  }
+
+  .label {
+    font-size: 0.7rem;
+  }
+
+  .track {
+    height: 12px;
+  }
+
+  .xp {
+    font-size: 0.65rem;
+  }
+}
