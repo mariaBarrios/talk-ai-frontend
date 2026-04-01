@@ -10,6 +10,43 @@
   min-width: 0;
 }
 
+.revealBtn {
+  display: block;
+  width: 100%;
+  margin: var(--space-md) 0;
+  padding: 0;
+  text-align: left;
+  font: inherit;
+  cursor: pointer;
+  appearance: none;
+  /* Evita el fondo blanco por defecto de <button> en el tema oscuro */
+  background-color: rgba(10, 10, 15, 0.98);
+  color: var(--color-text);
+  border-style: solid;
+  transition: box-shadow 0.2s ease, border-color 0.2s ease;
+}
+
+.revealBtn:hover {
+  box-shadow: 0 0 22px rgba(0, 255, 65, 0.28);
+}
+
+.revealBtn:focus-visible {
+  outline: 2px solid var(--color-neon-green);
+  outline-offset: 2px;
+}
+
+.revealHint {
+  margin: 0;
+  padding: var(--space-md);
+  font-family: var(--font-body);
+  font-size: 0.9rem;
+  line-height: 1.5;
+  color: var(--color-text);
+  font-style: italic;
+  background: rgba(8, 8, 12, 0.95);
+  border-top: 1px solid rgba(0, 255, 65, 0.18);
+}
+
 @media (min-width: 1024px) {
   .diff {
     flex-direction: row;

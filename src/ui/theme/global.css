@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Inter:wght@400;600;700&family=Fira+Code:wght@400;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Fira+Code:wght@400;600&display=swap');
 
 *,
 *::before,
@@ -25,7 +25,7 @@
 
   --font-pixel: 'Press Start 2P', monospace;
   --font-mono: 'Fira Code', 'Consolas', monospace;
-  --font-body: 'Inter', 'Segoe UI', sans-serif;
+  --font-body: 'Fira Code', 'Consolas', monospace;
 
   --space-xs: 0.25rem;
   --space-sm: 0.5rem;

@@ -27,31 +27,26 @@ export class InMemorySectionRepository implements SectionRepository {
         level: 1,
         title: 'SELECT YOUR CHARACTER',
         subtitle: '18 años de experiencia en 60 segundos',
-        content: [
-          {
-            type: 'quote',
-            value: 'He sobrevivido a 4 revoluciones tecnológicas. La IA es la 5ª. Y os cuento un secreto: las anteriores también iban a hacer que los programadores sobráramos.',
-          },
-        ],
+        content: [],
       },
       {
         id: 'realworld',
         level: 2,
         title: 'DIFFICULTY: HARD',
-        subtitle: 'El mundo real no tiene modo fácil',
+        subtitle: 'El mundo real se aprende en equipo',
         content: [
           {
             type: 'text',
-            value: 'Las empresas no buscan a alguien que escriba código. Buscan a alguien que lo entienda, lo defienda en una code review y debuguee un bug en producción a las 8 de la tarde.',
+            value: 'Las empresas valoran a quien entiende el codigo, lo explica en una code review y puede resolver bugs con serenidad cuando toca.',
             highlight: true,
           },
           {
             type: 'quote',
-            value: 'En mi equipo, cada línea de código pasa por una Pull Request donde 2-3 personas la revisan. Si no sabes explicar POR QUÉ escribiste algo así, no pasa.',
+            value: 'En mi equipo, cada linea pasa por una Pull Request revisada por 2-3 personas. Cuando explicas el POR QUE de tus decisiones, el trabajo gana calidad.',
           },
           {
             type: 'interaction',
-            prompt: '¿Qué creéis que pasa cuando el código que no entendéis tiene un bug en producción y vuestro jefe os pregunta qué ha pasado?',
+            prompt: '¿Que te da mas seguridad cuando algo falla: copiar una solucion o entenderla de verdad?',
           },
         ],
       },
@@ -59,24 +54,24 @@ export class InMemorySectionRepository implements SectionRepository {
         id: 'competence-trap',
         level: 3,
         title: 'TRAP!',
-        subtitle: 'La trampa de la competencia aparente',
+        subtitle: 'La ilusion de dominar demasiado pronto',
         content: [
           {
             type: 'quote',
-            value: 'Saber usar una calculadora no te convierte en matemático. Saber usar Copilot no te convierte en developer.',
+            value: 'Usar calculadora ayuda mucho, y entender matematicas te da libertad. Con IA pasa igual: la herramienta suma, y tu criterio marca la diferencia.',
           },
           {
             type: 'list',
             items: [
-              '¿Dónde están los tests?',
-              '¿Qué pasa si el usuario mete HTML en el input?',
+              '¿Como anadiriamos tests?',
+              '¿Que pasa si el usuario mete HTML en el input?',
               '¿Es accesible para alguien con lector de pantalla?',
-              '¿Se puede mantener si hay que añadir 5 campos más?',
+              '¿Se puede mantener si hay que anadir 5 campos mas?',
             ],
           },
           {
             type: 'text',
-            value: 'El efecto Dunning-Kruger amplificado: la IA te sube a la cima de "Mount Stupid" más rápido que nunca.',
+            value: 'La IA acelera el inicio. El siguiente paso es transformar ese impulso en criterio, practica y confianza real.',
             highlight: true,
           },
         ],
@@ -98,7 +93,7 @@ export class InMemorySectionRepository implements SectionRepository {
           },
           {
             type: 'quote',
-            value: 'Si no sabes qué es el event loop, no vas a poder debuguear el bug más común de JavaScript.',
+            value: 'Entender el event loop te da mucha ventaja para depurar uno de los bugs mas frecuentes en JavaScript.',
           },
           {
             type: 'text',
@@ -111,11 +106,11 @@ export class InMemorySectionRepository implements SectionRepository {
         id: 'ai-experience',
         level: 5,
         title: 'POWER-UP',
-        subtitle: 'Cómo uso la IA con 18 años de experiencia',
+        subtitle: 'Cómo uso la IA en equipos de producto reales',
         content: [
           {
             type: 'quote',
-            value: 'Yo le pido cosas a la IA y sé cuándo me está respondiendo bien y cuándo me está metiendo un gol. Vosotros... todavía no.',
+            value: 'La IA me ayuda mucho, y la experiencia me ayuda a validar mejor cada respuesta. Ese criterio se entrena practicando.',
           },
           {
             type: 'list',
@@ -126,7 +121,7 @@ export class InMemorySectionRepository implements SectionRepository {
           },
           {
             type: 'quote',
-            value: 'La IA es un multiplicador. Si multiplicas 0 × 1000, sigue siendo 0. Invertid en que el número base sea alto.',
+            value: 'La IA es un multiplicador. Cuanto mas crece tu base, mas valor obtienes de ella.',
           },
         ],
       },
@@ -138,7 +133,7 @@ export class InMemorySectionRepository implements SectionRepository {
         content: [
           {
             type: 'quote',
-            value: 'Cuando la IA te dé una solución, pregúntate: ¿podría yo haber llegado a esto? Si la respuesta es no, tienes deberes.',
+            value: 'Cuando la IA te de una solucion, preguntate: ¿podria yo haber llegado a esto? Si aun no, tienes una gran oportunidad para aprender.',
           },
           {
             type: 'text',
@@ -159,16 +154,16 @@ export class InMemorySectionRepository implements SectionRepository {
         content: [
           {
             type: 'text',
-            value: 'Estáis en el mejor momento posible para empezar. Tenéis herramientas que yo no tenía. Pero las herramientas sin criterio son peligrosas.',
+            value: 'Estais en un gran momento para empezar. Teneis herramientas increibles, y con criterio pueden llevaros muy lejos.',
             highlight: true,
           },
           {
             type: 'quote',
-            value: 'Esta semana, coged algo que la IA os haya generado y reescribidlo desde cero. Entended cada línea. Ese es el primer paso.',
+            value: 'Esta semana, elegid algo que os haya generado la IA y repasadlo con calma. Entender cada linea ya es un gran paso.',
           },
           {
             type: 'text',
-            value: 'No os conforméis con ser usuarios de IA. Sed los que la hacen funcionar.',
+            value: 'No os quedeis solo en usar IA: aprended tambien a guiarla y hacerla vuestra.',
             highlight: true,
           },
         ],
@@ -225,7 +220,7 @@ export class InMemorySectionRepository implements SectionRepository {
           { id: 'd', text: 'Error' },
         ],
         correctOptionId: 'b',
-        explanation: 'Es uno de los bugs más antiguos de JavaScript. typeof null === "object" desde 1995. La IA no te va a enseñar esto.',
+        explanation: 'Es uno de los bugs mas antiguos de JavaScript. typeof null === "object" desde 1995. Entender estos detalles te da una base muy solida.',
       },
       {
         id: 'q2',
@@ -237,7 +232,7 @@ export class InMemorySectionRepository implements SectionRepository {
           { id: 'd', text: 'NaN' },
         ],
         correctOptionId: 'b',
-        explanation: 'Coerción de tipos: 1 + "2" = "12", luego "12" + 3 = "123". Si no dominas la coerción, copiar código de la IA es como conducir sin carnet.',
+        explanation: 'Coercion de tipos: 1 + "2" = "12", luego "12" + 3 = "123". Dominar esto te ayuda a usar mejor cualquier codigo generado por IA.',
       },
       {
         id: 'q3',
@@ -261,7 +256,7 @@ export class InMemorySectionRepository implements SectionRepository {
           { id: 'd', text: 'Un patrón de diseño' },
         ],
         correctOptionId: 'b',
-        explanation: 'Cada atajo que tomas se acumula. Y adivina quién tiene que pagar esa deuda: tú, a las 8 de la tarde, con producción caída.',
+        explanation: 'Cada atajo se acumula con el tiempo. Si invertimos en calidad desde el inicio, el proyecto crece de forma mas sostenible.',
       },
     ];
   }

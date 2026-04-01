@@ -18,7 +18,7 @@ export const colors = {
 export const fonts = {
   pixel: "'Press Start 2P', monospace",
   mono: "'Fira Code', 'Consolas', monospace",
-  body: "'Inter', 'Segoe UI', sans-serif",
+  body: "'Fira Code', 'Consolas', monospace",
 } as const;
 
 export const spacing = {

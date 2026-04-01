@@ -47,7 +47,7 @@ export const HeroSection: React.FC = () => (
         className={styles.prompt}
       >
         <TypewriterText
-          text="> ¿Cuántos usáis IA para hacer trabajos de la carrera?_"
+          text="> Si ya usas IA para aprender o para clase, vas por buen camino._"
           speed={45}
         />
       </motion.div>

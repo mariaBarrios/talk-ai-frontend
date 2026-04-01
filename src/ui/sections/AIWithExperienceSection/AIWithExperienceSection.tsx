@@ -26,18 +26,18 @@ export const AIWithExperienceSection: React.FC = () => (
     <LevelBanner
       level={5}
       title="POWER-UP"
-      subtitle="Cómo uso la IA con 18 años de experiencia"
+      subtitle="Cómo uso la IA en equipos de producto reales"
       color="var(--color-neon-magenta)"
     />
 
     <blockquote className={styles.quote}>
-      "Yo le pido cosas a la IA y sé cuándo me está respondiendo bien y cuándo me está metiendo un gol. Vosotros... todavía no."
+      "La IA me ayuda mucho, y la experiencia me ayuda a validar mejor cada respuesta. Ese criterio se entrena practicando."
     </blockquote>
 
     <div className={styles.columns}>
       <div className={styles.column}>
         <PixelText as="h3" size="sm" color="var(--color-neon-green)" glow>
-          DONDE BRILLA
+          DONDE AYUDA MAS
         </PixelText>
         <ul className={styles.list}>
           {SHINES.map((item, i) => (
@@ -57,7 +57,7 @@ export const AIWithExperienceSection: React.FC = () => (
 
       <div className={styles.column}>
         <PixelText as="h3" size="sm" color="var(--color-neon-red)" glow>
-          DONDE FALLA
+          DONDE NECESITA CRITERIO
         </PixelText>
         <ul className={styles.list}>
           {FAILS.map((item, i) => (
@@ -88,7 +88,7 @@ export const AIWithExperienceSection: React.FC = () => (
         <span className={styles.result}>0</span>
       </p>
       <p className={styles.message}>
-        Invertid en que el número base sea alto.
+        Invierte en subir tu numero base, paso a paso.
       </p>
     </div>
   </AnimatedSection>

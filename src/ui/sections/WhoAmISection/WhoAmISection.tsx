@@ -23,10 +23,18 @@ export const WhoAmISection: React.FC<Props> = ({ events }) => (
       <ArcadeCounter value={6} label="Frameworks" suffix="+" color="var(--color-neon-green)" />
     </div>
 
-    <Timeline events={events} />
+    <div className={styles.currentRole}>
+      <div className={styles.logoWrap}>
+        <img
+          src="/talk-ai-frontend/assets/jakala-logo.png"
+          alt="Logo de JAKALA"
+          className={styles.jakalaLogo}
+          loading="lazy"
+        />
+        <p className={styles.roleText}>Actualmente trabajo en JAKALA</p>
+      </div>
+    </div>
 
-    <blockquote className={styles.quote}>
-      "He sobrevivido a 4 revoluciones tecnológicas. La IA es la 5ª. Y os cuento un secreto: las anteriores también iban a hacer que los programadores sobráramos."
-    </blockquote>
+    <Timeline events={events} />
   </AnimatedSection>
 );

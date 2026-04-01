@@ -45,7 +45,7 @@ export const Quiz: React.FC<Props> = ({ questions }) => {
         <p className={styles.explanation}>
           {score === questions.length
             ? '¡Perfecto! Tienes buen nivel de fundamentos.'
-            : 'Estos son los fundamentos que la IA no te va a enseñar. ¡A estudiar!'}
+            : 'Vas muy bien. Estos fundamentos se construyen paso a paso.'}
         </p>
       </div>
     );
@@ -101,7 +101,7 @@ export const Quiz: React.FC<Props> = ({ questions }) => {
               className={styles.feedback}
             >
               <PixelText as="span" size="sm" color={result.isCorrect ? 'var(--color-neon-green)' : 'var(--color-neon-red)'} glow>
-                {result.isCorrect ? '✓ CORRECT!' : '✗ WRONG!'}
+                {result.isCorrect ? '✓ BIEN VISTO' : '✗ Casi, vamos a por la siguiente'}
               </PixelText>
               <p className={styles.explanation}>{question.explanation}</p>
               <button className={styles.nextBtn} onClick={handleNext}>

@@ -30,7 +30,7 @@ export const FundamentalsSection: React.FC<Props> = ({ questions }) => (
         BOSS FIGHT: QUIZ DE FUNDAMENTOS
       </PixelText>
       <p className={styles.quizIntro}>
-        Veamos cuánto sabéis de los fundamentos que la IA no os va a enseñar.
+        Vamos a reforzar juntos los fundamentos que te ayudaran a usar la IA con criterio y confianza.
       </p>
       <Quiz questions={questions} />
     </div>

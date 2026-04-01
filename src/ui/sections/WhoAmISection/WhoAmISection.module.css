@@ -6,24 +6,45 @@
   margin-bottom: var(--space-xl);
 }
 
-.quote {
-  margin-top: var(--space-xl);
-  padding: var(--space-lg);
-  border-left: 3px solid var(--color-neon-cyan);
+.currentRole {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-lg);
+  margin-bottom: var(--space-xl);
+  padding: var(--space-md);
+  border: 1px solid rgba(0, 240, 255, 0.35);
+  border-radius: 10px;
+  background: rgba(0, 240, 255, 0.04);
+}
+
+.logoWrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-sm);
+  background: #fff;
+  border-radius: 8px;
+  padding: 14px 18px;
+  border: 1px solid rgba(255, 255, 255, 0.75);
+}
+
+.jakalaLogo {
+  width: clamp(220px, 42vw, 520px);
+  height: auto;
+  display: block;
+}
+
+.roleText {
   font-family: var(--font-body);
-  font-size: 1.1rem;
-  font-style: italic;
-  color: var(--color-neon-cyan);
-  max-width: 700px;
-  margin-left: auto;
-  margin-right: auto;
-  line-height: 1.7;
-  background: rgba(0, 240, 255, 0.03);
-  border-radius: 0 8px 8px 0;
+  color: #101015;
+  font-size: 1rem;
+  color: var(--color-neon-magenta);
+  letter-spacing: 0.03em;
 }
 
 @media (min-width: 1280px) {
-  .quote {
-    font-size: 1.2rem;
+  .currentRole {
+    padding: var(--space-lg);
   }
 }

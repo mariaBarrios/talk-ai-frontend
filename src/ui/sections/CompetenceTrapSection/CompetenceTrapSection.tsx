@@ -30,16 +30,20 @@ const BAD_CODE = `function LoginForm() {
 }`;
 
 const GOOD_CODE = `function LoginForm() {
+  // Un solo objeto tipado en lugar de user/pass sueltos: más fácil de validar y extender.
   const [formData, setFormData] = useState({
     username: "",
     password: "",
   });
+  // El ejemplo de la IA no mostraba fallos de red ni credenciales; aquí el usuario ve el error.
   const [error, setError] = useState<string | null>(null);
 
   const handleSubmit = async (e: FormEvent) => {
+    // Sin esto, un submit recarga la página; el mal ejemplo ni siquiera usaba <form>.
     e.preventDefault();
     try {
       const res = await loginService.login(
+        // Sanitizar antes de enviar reduce riesgo XSS frente a concatenar strings a ciegas.
         sanitize(formData.username),
         formData.password,
       );
@@ -50,26 +54,37 @@ const GOOD_CODE = `function LoginForm() {
   };
 
   return (
+    /* <form> + submit: semántica correcta, teclado y lectores; no un <div onClick> que dispara fetch. */
     <form onSubmit={handleSubmit} aria-label="Login">
       <h2>Iniciar sesión</h2>
-      {error && <p role="alert">{error}</p>}
+      {error && (
+        /* role="alert": anuncia el error a tecnologías de asistencia (el otro código no avisaba). */
+        <p role="alert">{error}</p>
+      )}
+      {/* Etiquetas reales ligadas con htmlFor; el mal ejemplo solo usaba placeholder (mala a11y). */}
       <label htmlFor="username">Usuario</label>
       <input
         id="username"
         value={formData.username}
-        onChange={handleChange("username")}
+        onChange={(e) =>
+          setFormData((prev) => ({ ...prev, username: e.target.value }))
+        }
         required
         autoComplete="username"
       />
       <label htmlFor="password">Contraseña</label>
+      {/* type="password" oculta lo que se escribe; el ejemplo sin criterio dejaba el input como texto plano. */}
       <input
         id="password"
         type="password"
         value={formData.password}
-        onChange={handleChange("password")}
+        onChange={(e) =>
+          setFormData((prev) => ({ ...prev, password: e.target.value }))
+        }
         required
         autoComplete="current-password"
       />
+      {/* <button type="submit"> es enfocable y activable con Enter; un <div> no lo es. */}
       <button type="submit">Entrar</button>
     </form>
   );
@@ -80,13 +95,13 @@ export const CompetenceTrapSection: React.FC = () => (
     <LevelBanner
       level={3}
       title="TRAP!"
-      subtitle="La trampa de la competencia aparente"
+      subtitle="La ilusion de dominar demasiado pronto"
       color="var(--color-neon-yellow)"
     />
 
     <blockquote className={styles.quote}>
-      "Saber usar una calculadora no te convierte en matemático.<br />
-      Saber usar Copilot no te convierte en developer."
+      "Usar calculadora ayuda mucho, y entender matematicas te da libertad.<br />
+      Con IA pasa igual: la herramienta suma, y tu criterio marca la diferencia."
     </blockquote>
 
     <div className={styles.codeSection}>
@@ -98,24 +113,24 @@ export const CompetenceTrapSection: React.FC = () => (
 
     <div className={styles.problems}>
       <PixelText as="h3" size="sm" color="var(--color-neon-yellow)">
-        ¿QUÉ FALLA EN EL CÓDIGO DE LA IA?
+        ¿QUE PODEMOS MEJORAR EN EL CODIGO DE LA IA?
       </PixelText>
       <ul className={styles.list}>
-        <li><span className={styles.x}>✗</span> Sin tests</li>
-        <li><span className={styles.x}>✗</span> Sin sanitización (XSS)</li>
-        <li><span className={styles.x}>✗</span> Sin accesibilidad (div en vez de form/button)</li>
-        <li><span className={styles.x}>✗</span> Sin manejo de errores</li>
-        <li><span className={styles.x}>✗</span> Sin labels para inputs</li>
-        <li><span className={styles.x}>✗</span> Sin tipado TypeScript</li>
+        <li><span className={styles.x}>✗</span> Anadir tests</li>
+        <li><span className={styles.x}>✗</span> Anadir sanitizacion (XSS)</li>
+        <li><span className={styles.x}>✗</span> Mejorar accesibilidad (usar form/button)</li>
+        <li><span className={styles.x}>✗</span> Incluir manejo de errores</li>
+        <li><span className={styles.x}>✗</span> Incluir labels en inputs</li>
+        <li><span className={styles.x}>✗</span> Anadir tipado TypeScript</li>
       </ul>
     </div>
 
     <div className={styles.dunning}>
       <PixelText as="span" size="sm" color="var(--color-neon-magenta)" glow>
-        DUNNING-KRUGER AMPLIFICADO
+        APRENDER TAMBIEN ES PRACTICAR
       </PixelText>
       <p className={styles.text}>
-        La IA te sube a la cima de "Mount Stupid" más rápido que nunca. Crees que ya eres pro porque pasaste el tutorial con el power-up.
+        La IA acelera el inicio. El siguiente paso es transformar ese impulso en criterio, practica y confianza real.
       </p>
     </div>
   </AnimatedSection>

@@ -1,0 +1,9 @@
+.canvas {
+  display: block;
+  image-rendering: pixelated;
+  image-rendering: crisp-edges;
+  border: 2px solid var(--color-neon-magenta);
+  border-radius: 6px;
+  box-shadow: 0 0 14px rgba(255, 0, 170, 0.35);
+  background: #101015;
+}

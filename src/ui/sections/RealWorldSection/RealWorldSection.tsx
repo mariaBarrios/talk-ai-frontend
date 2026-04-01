@@ -9,7 +9,7 @@ export const RealWorldSection: React.FC = () => (
     <LevelBanner
       level={2}
       title="DIFFICULTY: HARD"
-      subtitle="El mundo real no tiene modo fácil"
+      subtitle="Aprender en equipo te hace crecer mas rapido"
       color="var(--color-neon-red)"
     />
 
@@ -19,7 +19,7 @@ export const RealWorldSection: React.FC = () => (
           BOSS: CODE REVIEW
         </PixelText>
         <p className={styles.text}>
-          En mi equipo, cada línea de código pasa por una Pull Request donde 2-3 personas la revisan. Si no sabes explicar <strong>POR QUÉ</strong> escribiste algo así, no pasa.
+          En mi equipo, cada linea pasa por una Pull Request revisada por 2-3 personas. Cuando compartes el <strong>POR QUE</strong> de tus decisiones, todo fluye mejor.
         </p>
       </div>
 
@@ -28,7 +28,7 @@ export const RealWorldSection: React.FC = () => (
           BOSS: BUG EN PRODUCCIÓN
         </PixelText>
         <p className={styles.text}>
-          Son las 20:00. Producción está caída. Tu jefe te mira. El código que no entiendes se ha convertido en una bomba de relojería. ¿Ahora qué?
+          Cuando aparece un bug en produccion, entender el codigo marca la diferencia: te ayuda a mantener la calma y resolverlo en equipo.
         </p>
       </div>
 
@@ -37,14 +37,14 @@ export const RealWorldSection: React.FC = () => (
           BOSS: DEUDA TÉCNICA
         </PixelText>
         <p className={styles.text}>
-          Cada atajo que tomas hoy se acumula. Y alguien tiene que pagar esa deuda: tú, a las 8 de la tarde, con producción caída.
+          Cada atajo de hoy puede complicar manana. Si cuidamos la base desde el principio, avanzamos con mas confianza.
         </p>
       </div>
     </div>
 
     <div className={styles.interaction}>
       <TypewriterText
-        text='> ¿Qué creéis que pasa cuando el código que no entendéis tiene un bug en producción y vuestro jefe os pregunta qué ha pasado?_'
+        text='> ¿Que te da mas seguridad cuando algo falla: copiar una solucion o entenderla de verdad?_'
         speed={30}
       />
     </div>

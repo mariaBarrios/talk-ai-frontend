@@ -29,7 +29,7 @@ export const ClosingSection: React.FC = () => (
         viewport={{ once: true }}
         transition={{ delay: 0.3 }}
       >
-        "Estáis en el mejor momento posible para empezar. Tenéis herramientas que yo no tenía. Pero las herramientas sin criterio son peligrosas."
+        "Estais en un gran momento para empezar. Teneis herramientas increibles, y con criterio podeis llegar muy lejos."
       </motion.blockquote>
 
       <motion.div
@@ -43,7 +43,7 @@ export const ClosingSection: React.FC = () => (
           QUEST:
         </PixelText>
         <p className={styles.ctaText}>
-          Esta semana, coged algo que la IA os haya generado y reescribidlo desde cero. Entended cada línea. Ese es el primer paso.
+          Esta semana, elegid algo que os haya generado la IA y repasadlo con calma. Entender cada linea ya es un gran paso.
         </p>
       </motion.div>
 
@@ -55,7 +55,7 @@ export const ClosingSection: React.FC = () => (
         className={styles.finalQuote}
       >
         <TypewriterText
-          text='> "No os conforméis con ser usuarios de IA. Sed los que la hacen funcionar."'
+          text='> "No os quedeis solo en usar IA: aprended tambien a guiarla y hacerla vuestra."'
           speed={50}
         />
       </motion.div>

@@ -17,19 +17,19 @@ const MINDSET_ITEMS: MindsetItem[] = [
   {
     icon: 'magnifier',
     title: 'Curiosidad > Comodidad',
-    text: 'Cuando la IA te dé una solución, pregúntate: ¿podría yo haber llegado a esto? Si la respuesta es no, tienes deberes.',
+    text: 'Cuando la IA te de una solucion, preguntate: ¿podria yo haber llegado a esto? Si aun no, tienes una gran oportunidad para aprender.',
     color: 'var(--color-neon-cyan)',
   },
   {
     icon: 'brain',
     title: 'Pensamiento Crítico',
-    text: 'Aprender a cuestionar, no a copiar. Cada línea de código que aceptas sin entender es una vulnerabilidad.',
+    text: 'Aprender a cuestionar, no solo a copiar. Cada linea que entiendes te hace mas solida como developer.',
     color: 'var(--color-neon-green)',
   },
   {
     icon: 'runner',
     title: 'Maratón, no Sprint',
-    text: 'La carrera es el calentamiento. El juego de verdad empieza cuando os contrate alguien. Mirad a largo plazo.',
+    text: 'La carrera es el comienzo. El crecimiento real llega con el tiempo, asi que merece la pena mirar a largo plazo.',
     color: 'var(--color-neon-yellow)',
   },
   {
